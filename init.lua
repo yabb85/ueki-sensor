@@ -13,10 +13,7 @@ wifi.sta.eventMonReg(wifi.STA_APNOTFOUND, function() print("STATION_NO_AP_FOUND"
 wifi.sta.eventMonReg(wifi.STA_FAIL, function() print("STATION_CONNECT_FAIL") end)
 wifi.sta.eventMonReg(wifi.STA_GOTIP, function() print("STATION_GOT_IP") end)
 wifi.sta.eventMonStart()
-station_cfg={}
-station_cfg.ssid=""
-station_cfg.pwd=""
-station_cfg.auto=true
+dofile"config.lua"
 code = wifi.sta.config(station_cfg)
 -- wifi config end
 dofile("ueki.lua")
